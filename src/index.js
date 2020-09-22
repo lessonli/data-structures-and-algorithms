@@ -4,4 +4,6 @@
 // import './queue'
 // import './priorityQueue'
 
-import './linkList'
+// import './linkList'
+
+import "./DoublyLinkedList"
