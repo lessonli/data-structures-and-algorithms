@@ -211,4 +211,12 @@ export class DoublyLinkedList extends LinkedList {
     return super.isEmpty();
   }
 
+  /* 获取链表的第一个元素*/
+  getFirst(){
+    return this.head.data
+  }
+  getLast(){
+    return this.tail.data
+  }
+
 }
