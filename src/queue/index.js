@@ -1,6 +1,10 @@
-import Queue from "./queue"
+import { hotPotato } from './hotPotato';
 import passGame from "./passGame";
 
-let nameList = ["lesson",'lucy','lily','tom','kobe']
 
-console.log(passGame(nameList, 2));
+
+
+let nameList = ["join",'Jack','Camila','Ingrid','Carl']
+
+console.log(passGame(nameList, 7), "passGame");
+console.log(hotPotato(nameList, 7), "hotPotato");
