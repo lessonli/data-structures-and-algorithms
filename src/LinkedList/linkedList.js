@@ -16,7 +16,6 @@ export class LinkedList {
     // 初始 head 为 null，head 指向链表的第一个节点
     this.head = null;
   }
-
   // ------------ 链表的常见操作 ------------ //
 
   // append(data) 往链表尾部追加数据
@@ -205,4 +204,56 @@ export class LinkedList {
   }
 }
 
+
+// 封装节点类
+export class Node1 {
+  constructor(ele) {
+    this.ele = ele;
+    this.next = null;
+  }
+}
+export class LinkedListSelf {
+  
+  constructor(){
+    this.length = 0;
+    this.head = null
+  }
+  
+
+  // 构建内置类 该实验性语法 暂不支持
+  // Node1 = class {
+  //   constructor(ele){
+  //     this.ele = ele
+  //     this.next = null
+  //   }
+  // }
+
+  append(ele){
+    let newNode = new Node1(ele);
+    
+    // 如果链表中元素为空 则直接添加
+    if(this.head=== null){
+      this.head = newNode
+      
+    } else {
+     let current = this.head
+    //  循环列表一直查到最后一项 如果 next 为空了 则代表 该链表到尾部了 
+     while (current.next) {
+       current = current.next
+     }
+    //  将最后一项 的next 指向最后一个 建立链接
+     current.next = newNode
+    
+    }
+    this.length++
+
+  }
+
+
+
+
+
+  
+
+}
 

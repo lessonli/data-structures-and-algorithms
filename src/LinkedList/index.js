@@ -1,7 +1,7 @@
-import { LinkedList } from './linkedList';
+import { LinkedList, LinkedListSelf } from './linkedList';
 
 // ---------------- 封装的单向链表结构测试 ---------------- //
-console.log('// ----- 单向链表结构测试 START -----//');
+
 const linkedList = new LinkedList();
 
 // 测试 append 方法
@@ -46,6 +46,18 @@ console.log(linkedList.isEmpty()); //--> false
 // 测试 size 方法
 console.log(linkedList.size()); //--> 3
 
-console.log('// ----- 单向链表结构测试 END -----//');
+
+
+
+//  测试 自己写的 链表
+
+const linkedListSelf = new LinkedListSelf()
+
+linkedListSelf.append(1)
+linkedListSelf.append(2)
+linkedListSelf.append(3)
+// console.clear()
+console.log(1,'1');
+console.log(linkedListSelf, 'linkedListSelf');
 
 

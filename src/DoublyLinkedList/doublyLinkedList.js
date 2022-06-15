@@ -1,4 +1,4 @@
-import {LinkedList, Node} from '../LinkedList/linkedList';
+import { LinkedList, Node } from '../linkedList';
 
 // 双向链表结构的封装
 
