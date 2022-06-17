@@ -230,7 +230,7 @@ export class LinkedListSelf {
 
   append(ele){
     let newNode = new Node1(ele);
-    
+
     // 如果链表中元素为空 则直接添加
     if(this.head=== null){
       this.head = newNode
@@ -249,11 +249,44 @@ export class LinkedListSelf {
 
   }
 
+  /**
+   * 
+   * @param {*} position 删除的位置
+   * @returns isDeleted ele
+   */
+  removaAt(position){
+   
+    // 判断边界值 如果 超出边界 则 为 null
+    if(position > 0 || position < this.length) {
+      let currentNode = this.head;
+      if(position === 0){
+        this.head = currentNode.next
+      } else{
+        // 删除第一个 之外的元素
+        let previous = null;
+        let index = 0;
+        while (index++ < position) {
+          previous = currentNode
+          currentNode = currentNode.next
+          
+        }
+        console.log(previous, 'previous');
+        previous.next = currentNode.next
+      }
+      this.length--
+      return currentNode.ele
+    } else {
+      return null
+    }
+    
+  }
+
+  insert(position, ele){
+    
+  }
 
 
 
-
-  
 
 }
 
