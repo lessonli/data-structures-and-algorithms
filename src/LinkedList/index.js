@@ -53,13 +53,16 @@ import { LinkedListSelf } from './linkedList';
 
 const linkedListSelf = new LinkedListSelf()
 
-linkedListSelf.append(1)
-linkedListSelf.append(2)
-linkedListSelf.append(3)
-linkedListSelf.append(4)
-// console.clear()
-console.log(1,'1');
-linkedListSelf.removaAt(0)
-console.log(linkedListSelf, 'linkedListSelf');
+// linkedListSelf.append('李森')
+linkedListSelf.append('李森')
+linkedListSelf.append('李亚伟')
+linkedListSelf.append('王启辉')
+console.log(linkedListSelf.get(4), 'get');
+
+console.log('linkedListSelf.indexOf(0)',linkedListSelf.indexOf('李森'), '')
+const updateLinkedItem =  linkedListSelf.update(0, '李森森')
+console.log(updateLinkedItem, 'updateLinkedItem');
+console.log(linkedListSelf);
+console.log(linkedListSelf.toString());
 
 

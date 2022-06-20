@@ -257,7 +257,7 @@ export class LinkedListSelf {
   removaAt(position){
    
     // 判断边界值 如果 超出边界 则 为 null
-    if(position > 0 || position < this.length) {
+    if(position > -1 && position < this.length) {
       let currentNode = this.head;
       if(position === 0){
         this.head = currentNode.next
@@ -282,11 +282,114 @@ export class LinkedListSelf {
   }
 
   insert(position, ele){
-    
+    // 在边界范围内
+    if(position >= 0 && position < this.length){
+      let node = new Node1(ele)
+      let current = this.head
+      let previous = null
+      let index = 0
+      if(position === 0){
+        node.next = current
+        this.head = node
+      } else {
+        // 一直循环到当前的位置
+        while (index ++ < position) {
+          previous = current
+          current = current.next
+        }
+        node.next = current
+        previous.next = node
+      }
+      this.length++ 
+      return true
+    } else{
+      return false
+    }
   }
 
+  /**
+   * 
+   * @param {number} position 
+   * @returns 
+   * @description 从0 开始
+   */
+  get(position){
+    // 判断边界权限
+    if(position> -1 && position < this.length){
+      let index = 0
+      let current = this.head // 保存 当前 指针的引用
+      while (index++ < position) {
+        current = current.next
+      }
+      // 跳出循环表示 查找到了
+      return  current.ele
+    } else {
+      return null
+    }
+  }
+  
+  /**
+   * 
+   * @param {ele} ele 
+   * @return {number} num | -1
+   */
+  indexOf(ele){
+    let index = 0
+    let current = this.head
+    
+    while (current) {
+      if(current.ele === ele){
+        return index
+      }
+      current = current.next
+      index++
+    }
+    return -1
+  }
 
+  isEmpty(){
+    return this.length === 0? true: false
+  }
 
+  size(){
+    return this.length
+  }
+
+  // 更新某个节点的值
+  update(position, ele){
+    if(position > -1 && position < this.length){
+      let index = 0
+      let current = this.head
+      while (index ++ < position) {
+        current = current.next
+      }
+      current.ele = ele
+      return current
+
+    } else {
+      // 越界了 返回false
+      return false
+    }
+  }
+/**
+ * 
+ * @param {*} ele 
+ * @desc 传入的元素存在就删除该节点
+ */
+  remove(ele){
+    this.removaAt(this.indexOf(ele))
+  }
+
+  // 因为 js 内置了 该方法 我们需要拦截掉
+  toString(){
+    let current = this.head
+    let res = ''
+    while (current) {
+      res+= current.ele+' '
+      current = current.next
+    }
+    return res
+  }
 
 }
 

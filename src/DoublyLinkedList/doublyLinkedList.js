@@ -118,15 +118,6 @@ export class DoublyLinkedList extends LinkedList {
     return current
   }
 
-  /* 另一个思路实现 get 效率稍微好一点*/
-  /* 从后往前prev this.length 除以2  和 position 比较 判断  有点二分法的思想*/
-
-  /*当this.length / 2 > position：从头（head）开始遍历；
-当this.length / 2 < position：从尾（tail）开始遍历；*/
-  _get(position) {
-
-  }
-
   idnexOf(data) {
     let index = 0
     let currentNode = this.head
